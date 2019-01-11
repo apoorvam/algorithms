@@ -1,5 +1,3 @@
-package com.company;
-
 /*
 Quick Union is an algorithm to solve dynamic connectivity problem.
 An integer array of length N, where interpretation is that array[i] is the parent of i. Or root of i is arr[arr[..arr[i]]]
