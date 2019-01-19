@@ -10,7 +10,7 @@ Complexiety:
 
 Sort: n ln n OR n^2
 Binary Search: ln n
-Total : n *(ln n)^2 OR n^2 ln n
+Total : n ln n + n^2*(ln n) OR n^2 + n^2 * ln n
 */
 public class ThreeSumWithSortAndSearch {
 

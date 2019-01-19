@@ -10,6 +10,9 @@ Implementation of various algorithms in Java, with cost analysis.
     - Brute force
     - Using sorting and search
 * Binary Search
+    - Bitonic array search
+
+More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md).
 
 ### Usage
 
