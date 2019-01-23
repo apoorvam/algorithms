@@ -1,3 +1,5 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /* Implementation of Data Structure Stack of strings using linked lists.
@@ -5,25 +7,46 @@ import java.util.Scanner;
 Time complexiety: Every operation takes constant time
 Space: ~40 bytes per stack node(excluding string itself): 16B object overhead, 8B each for inner object, item and next
 */
-public class Stack<Item> {
+public class Stack<Item> implements Iterable<Item> {
 
     private Node first = null;
+
+    @Override
+    public Iterator<Item> iterator() {
+        return new Iterator<Item>() {
+            private Node current = first;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public Item next() {
+                if (!hasNext()) throw new NoSuchElementException("No element found");
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }
+        };
+    }
+
     private class Node {
         Item item;
         Node next;
     }
 
-    private Item pop() {
+    public Item pop() {
         Item item = first.item;
         first = first.next;
         return item;
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return first == null;
     }
 
-    private void push(Item line) {
+    public void push(Item line) {
         Node oldFirst = first;
         Node newNode = new Node();
         newNode.item = line;

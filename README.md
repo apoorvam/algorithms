@@ -19,9 +19,11 @@ More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/
 * Stack
     - Using linked lists
     - Using array
+    - With max
 * Queue
     - Using linked lists
     - Using array
+* Queue using two stacks
 
 ### Usage
 
