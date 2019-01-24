@@ -24,6 +24,8 @@ More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/
     - Using linked lists
     - Using array
 * Queue using two stacks
+* Dequeue
+* Randomized Queue
 
 ### Usage
 
