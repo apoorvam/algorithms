@@ -4,99 +4,45 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /*
-* A randomized queue is similar to a stack or queue, except that the item removed is chosen uniformly at random from
-* items in the data structure.
+* A randomized queue is similar to a stack or queue, except that the item removed is chosen uniformly at random from items in the data structure.
 * */
-public class RandomizedQueue<Item> implements Iterable<Item> {
-
+public class RandomizedQueue<Item> implements Iterable<Item>{
+    private Item[] items;
     private int size = 0;
 
-    @Override
-    public Iterator<Item> iterator() {
-        return new RandomQueueIterator();
+    public RandomizedQueue() {
+        items = (Item[]) new Object[1];
     }
 
-    private class Node {
-        Item item;
-        Node next;
+    public void enqueue(Item item) {
+        if (item == null) throw new IllegalArgumentException("Argument invalid");
+
+        if (size == items.length-1) {
+            resize(items.length * 2);
+        }
+        items[size++] = item;
     }
 
-    private class RandomQueueIterator implements Iterator<Item> {
-        private Item[] items;
-        private int index = 0;
-
-        public RandomQueueIterator() {
-            items = (Item[]) new Object[size];
-            Node current = first;
-            for (int i = 0; i < size; i++) {
-                items[i] = current.item;
-            }
-            StdRandom.shuffle(items);
+    private void resize(int capacity) {
+        Item[] newQ = (Item[]) new Object[capacity];
+        int index = 0;
+        for (int i = 0; i < size; i++) {
+            newQ[index++] = items[i];
         }
-
-        @Override
-        public boolean hasNext() {
-            return index < items.length;
-        }
-
-        @Override
-        public Item next() {
-            if (!hasNext()) throw new NoSuchElementException("Empty queue");
-            return items[index++];
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException("Remove operation not supported");
-        }
-    }
-
-    private Node first, last;
-
-    public RandomizedQueue(){}
-
-    public int size() {
-        return size;
-    }
-
-    public boolean isEmpty() {
-        return first == null;
-    }
-
-    public void enqueue(Item text) {
-        if (text == null) throw new IllegalArgumentException("Argument invalid");
-        Node oldLast = last;
-        Node n = new Node();
-        n.item = text;
-        n.next = null;
-        if (isEmpty()) {
-            first = n;
-            last = n;
-        } else {
-            oldLast.next = n;
-            last = n;
-        }
-        size++;
+        items = newQ;
     }
 
     public Item dequeue() {
-        Node previous = samplePrevItem();
         assertNotEmpty();
-        if (size-- == 1) {
-            Item item = first.item;
-            first = null;
-            last = null;
-            return item;
-        }
-        if (previous == null) {
-            Node current = first;
-            first = current.next;
-            return current.item;
-        }
-        Node current = previous.next;
-        previous.next = current.next;
-        return current.item;
+        int rand = StdRandom.uniform(0, size);
+        Item item = items[rand];
+        items[rand] = items[size-1];
+        items[size-1] = null;
+        size--;
+        if (size == items.length/4) resize(items.length/2);
+        return item;
     }
+
 
     private void assertNotEmpty() {
         if (isEmpty()) throw new NoSuchElementException("Empty queue");
@@ -104,23 +50,49 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public Item sample() {
         assertNotEmpty();
-        if (size == 1) return first.item;
-        Node prev = samplePrevItem();
-        Node sample;
-        if (prev == null) sample = first;
-        else sample = prev.next;
-        return sample.item;
-    }
-
-    private Node samplePrevItem() {
         int rand = StdRandom.uniform(0, size);
-        Node current = first;
-        Node previous = null;
-        for (int i = 0; i < rand; i++) {
-            previous = current;
-            current = current.next;
-        }
-        return previous;
+        return items[rand];
     }
 
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        return new RandomizedQueueIterator();
+    }
+
+    private class RandomizedQueueIterator implements Iterator<Item> {
+        private Item[] itItems;
+        private int index = 0;
+
+        public RandomizedQueueIterator() {
+            itItems = (Item[]) new Object[size];
+            for (int i = 0; i < size; i++) {
+                itItems[i] = items[i];
+            }
+            StdRandom.shuffle(itItems);
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < size;
+        }
+
+        @Override
+        public Item next() {
+            if (!hasNext()) throw new NoSuchElementException("Empty queue");
+            return itItems[index++];
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("Remove operation not supported");
+        }
+    }
 }

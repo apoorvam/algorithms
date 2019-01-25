@@ -5,9 +5,10 @@ import java.util.NoSuchElementException;
 * A double-ended queue or deque (pronounced “deck”) is a generalization of a stack and a queue that supports adding and
 * removing items from either the front or the back of the data structure.
 * */
-public class Deque<Item> implements Iterable<Item>{
+public class Deque<Item> implements Iterable<Item> {
 
     private int size = 0;
+    private Node first, last = null;
 
     private class Node {
         Node next;
@@ -15,9 +16,8 @@ public class Deque<Item> implements Iterable<Item>{
         Item item;
     }
 
-    private Node first, last = null;
-
-    public Deque() {}
+    public Deque() {
+    }
 
     public boolean isEmpty() {
         return first == null;
@@ -65,6 +65,7 @@ public class Deque<Item> implements Iterable<Item>{
         validateNotEmpty();
         Item item = first.item;
         if (first.next == null) last = null;
+        else first.next.previous = null;
         first = first.next;
         size--;
         return item;
@@ -73,7 +74,10 @@ public class Deque<Item> implements Iterable<Item>{
     public Item removeLast() {
         validateNotEmpty();
         Item item = last.item;
-        if (last.previous != null) last = last.previous;
+        if (last.previous != null) {
+            last.previous.next = null;
+            last = last.previous;
+        }
         else {
             last = null;
             first = null;
@@ -85,12 +89,10 @@ public class Deque<Item> implements Iterable<Item>{
     public Iterator<Item> iterator() {
         return new Iterator<Item>() {
             private Node current = first;
-
             @Override
             public boolean hasNext() {
                 return current != null;
             }
-
             @Override
             public Item next() {
                 if (current == null) throw new NoSuchElementException("No element found");
@@ -98,16 +100,11 @@ public class Deque<Item> implements Iterable<Item>{
                 current = current.next;
                 return item;
             }
-
             @Override
             public void remove() {
                 throw new UnsupportedOperationException("Operation not supported");
             }
         };
-    }
-
-    public static void main(String[] args) {
-
     }
 
 }

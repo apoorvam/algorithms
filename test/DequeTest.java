@@ -112,4 +112,21 @@ public class DequeTest {
         assertEquals("DABC", result);
     }
 
+    @Test
+    public void checkIteratorWithIntermixedCalls() {
+        Deque<Integer> deque = new Deque<Integer>();
+        deque.addFirst(1);
+        deque.addLast(2);
+        assertEquals(new Integer(1), deque.removeFirst());  // ==> 1
+        deque.addFirst(4);
+        assertEquals(new Integer(4), deque.removeFirst()); //  ==> 4
+        assertEquals(new Integer(2), deque.removeLast()); // 2
+
+        String result = "";
+        for (Integer item : deque) {
+            result += item;
+        }
+        assertEquals("", result);
+    }
+
 }
