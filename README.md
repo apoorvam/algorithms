@@ -12,6 +12,7 @@ Implementation of various algorithms in Java, with cost analysis.
 * Binary Search
     - Bitonic array search
 * Selection Sort
+* Insertion Sort
 
 More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md).
 
