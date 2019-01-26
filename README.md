@@ -11,6 +11,7 @@ Implementation of various algorithms in Java, with cost analysis.
     - Using sorting and search
 * Binary Search
     - Bitonic array search
+* Selection Sort
 
 More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md).
 
@@ -26,6 +27,8 @@ More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/
 * Queue using two stacks
 * Dequeue
 * Randomized Queue
+    - Using linked lists
+    - Using array
 
 ### Usage
 
@@ -40,3 +43,5 @@ To execute:
 ```
 java -cp bin Main
 ```
+
+Some of these questions can be found in Algorithms and Data Structures course in Coursera by Princeton University.
