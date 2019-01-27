@@ -15,7 +15,6 @@ public class Insertion {
         int count = Integer.parseInt(StdIn.readLine());
         Comparable[] arr = new Comparable[count];
         for (int i = 0; i < count; i++)
-
             arr[i] = Integer.parseInt(StdIn.readString());
 
         sort(arr);

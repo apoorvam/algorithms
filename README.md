@@ -11,10 +11,11 @@ Implementation of various algorithms in Java, with cost analysis.
     - Using sorting and search
 * Binary Search
     - Bitonic array search
-* Selection Sort
-* Insertion Sort
+* [Sorting](https://raw.githubusercontent.com/apoorvam/algorithms/master/src/sorting/README.md)
+    - Selection Sort
+    - Insertion Sort
 
-More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md).
+More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md) of algorithms.
 
 ## Implementation of Data Structures
 
@@ -36,7 +37,7 @@ More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/
 To compile: 
 
 ```
-javac -d bin -classpath lib/algs4.jar src/*.java
+javac -d bin -classpath lib/algs4.jar src/**/*.java
 ```
 
 To execute: 
