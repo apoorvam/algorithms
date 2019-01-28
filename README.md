@@ -11,14 +11,14 @@ Implementation of various algorithms in Java, with cost analysis.
     - Using sorting and search
 * Binary Search
     - Bitonic array search
-* [Sorting](https://raw.githubusercontent.com/apoorvam/algorithms/master/src/sorting/README.md)
+* [Sorting](https://github.com/apoorvam/algorithms/blob/master/src/sorting/README.md)
     - Selection Sort
     - Insertion Sort
     - Shell Sort
     - Merge Sort
 * Knuth Shuffle
 
-More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md) of algorithms.
+More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/README.md) of algorithms.
 
 ## Implementation of Data Structures and Problems solved
 
