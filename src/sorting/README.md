@@ -23,7 +23,22 @@ Better in best and random cases when compared to Selection sort, but not in wors
 - It's idea is to move elements more than one position using an incremental sequence like powers of 2 minus 1, 3x+1, etc. Element at position i is compared with element at i+h, where is 7 in case of 7-sort and swapped if out of order. 
 - 1-sort is like a insertion sort. Instead of comparing with element left of it, we compare with elements at distance in multiples of h left of element i.
 
-![Shell Sort example](https://raw.githubusercontent.com/apoorvam/algorithms/master/assets/shell_sort_example.png)
+![Shell Sort example](https://github.com/apoorvam/algorithms/blob/master/assets/shell_sort_example.png?raw=true)
 
 ### Time Complexiety
 * Worst case: N^(3/2). But very fast for smaller input size and less code footprint. Average case complexiety cannot be easily defined(linearithmetic).
+
+## Merge sort
+* Uses divide and conquer method to sort.
+* Divide array into two halves, recursively sort them, merge two halves.
+
+### Time Complexiety
+* Time: Uses utmost N log N compares and 6N log N array access to sort any array.
+* Space: Uses extra space proportional to N, for auxillary array.
+
+#### Optmizations
+* Optimization 1: Use insertion sort for array sizes ~ 7
+* Optimization 2: Avoid if already sorted. If biggest element of left subarray is less than smallest element of right subarray,
+there is no need of merge.
+
+![Merge sort vizualization](https://github.com/apoorvam/algorithms/blob/master/assets/mergesort_viz.jpeg?raw=true)

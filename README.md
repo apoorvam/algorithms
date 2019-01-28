@@ -14,6 +14,8 @@ Implementation of various algorithms in Java, with cost analysis.
 * [Sorting](https://raw.githubusercontent.com/apoorvam/algorithms/master/src/sorting/README.md)
     - Selection Sort
     - Insertion Sort
+    - Shell Sort
+    - Merge Sort
 * Knuth Shuffle
 
 More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md) of algorithms.
