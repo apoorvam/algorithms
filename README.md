@@ -18,7 +18,7 @@ Implementation of various algorithms in Java, with cost analysis.
 
 More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/analysis/README.md) of algorithms.
 
-## Implementation of Data Structures
+## Implementation of Data Structures and Problems solved
 
 * Stack
     - Using linked lists
@@ -32,6 +32,7 @@ More on [analysis](https://raw.githubusercontent.com/apoorvam/algorithms/master/
 * Randomized Queue
     - Using linked lists
     - Using array
+* Intersection of two arrays
 
 ### Usage
 
