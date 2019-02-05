@@ -70,7 +70,6 @@ public class FastCollinearPoints {
         for (int i = 0; i < points.length; i++)
             for (int j = i + 1; j < points.length; j++)
                 if (points[i].compareTo(points[j]) == 0) throw new IllegalArgumentException("Duplicate points found");
-        if (points.length < 4) throw new IllegalArgumentException("Insufficient number of points");
     }
 
     public static void main(String[] args) {

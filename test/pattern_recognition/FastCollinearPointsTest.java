@@ -93,4 +93,34 @@ public class FastCollinearPointsTest {
         assertEquals(0, segments.length);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsIllegalArgForNullPoint() {
+        Point[] points = {
+                new Point(10, 10),
+                new Point(20, 10),
+                null,
+        };
+
+        new FastCollinearPoints(points);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsIllegalArgForNullArg() {
+        Point[] points = null;
+
+        new FastCollinearPoints(points);
+    }
+
+    @Test
+    public void segmentsWithPointsLessThanFour() {
+        Point[] points = {
+                new Point(10, 10),
+                new Point(20, 10),
+        };
+
+        LineSegment[] segments = new FastCollinearPoints(points).segments();
+
+        assertEquals(0, segments.length);
+    }
+
 }
