@@ -1,9 +1,7 @@
 package pattern_recognition;
 
 /*************************************************************************
- *
  *  An immutable data type for Line segments in the plane.
- *
  *************************************************************************/
 
 public class LineSegment {

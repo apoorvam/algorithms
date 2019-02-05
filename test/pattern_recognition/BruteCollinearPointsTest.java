@@ -17,8 +17,38 @@ public class BruteCollinearPointsTest {
 
         LineSegment[] segments = new BruteCollinearPoints(points).segments();
 
-        assertEquals(2, segments.length);
-        assertEquals("(10, 10) -> (40, 10)", segments[0].toString());
+        assertEquals(5, segments.length);
+    }
+
+
+    @Test
+    public void segmentsWithPointsLessThanFour() {
+        Point[] points = {
+                new Point(10, 10),
+                new Point(20, 10),
+        };
+
+        LineSegment[] segments = new BruteCollinearPoints(points).segments();
+
+        assertEquals(0, segments.length);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsIllegalArgForNullPoint() {
+        Point[] points = {
+                new Point(10, 10),
+                new Point(20, 10),
+                null,
+        };
+
+        new BruteCollinearPoints(points);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsIllegalArgForNullArg() {
+        Point[] points = null;
+
+        new BruteCollinearPoints(points);
     }
 
 }

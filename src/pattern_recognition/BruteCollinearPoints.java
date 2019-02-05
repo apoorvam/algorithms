@@ -10,26 +10,24 @@ import java.util.List;
 
 public class BruteCollinearPoints {
 
-    private final Point[] points;
-    private LineSegment[] lineSegments;
+    private final LineSegment[] lineSegments;
 
-    public BruteCollinearPoints(Point[] points){
+    public BruteCollinearPoints(Point[] points) {
         if (points == null) throw new IllegalArgumentException("Argument cannot be null");
-        Arrays.sort(points);
         validatePoints(points);
+        Point[] sortedPoints = points.clone();
+        Arrays.sort(sortedPoints);
 
-        this.points = points;
-        int N = points.length;
+        int N = sortedPoints.length;
         List<LineSegment> list = new ArrayList<>();
 
-        for (int i = 0; i < N-3; i++) {
-            for (int j = i + 1; j < N-2; j++) {
-                for (int k = j + 1; k < N-1; k++) {
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                for (int k = j + 1; k < N; k++) {
                     for (int l = k + 1; l < N; l++) {
-                        Point p = points[i], q = points[j], r = points[k], s = points[l];
-                        if (p.slopeTo(q) == q.slopeTo(r) && q.slopeTo(r) == r.slopeTo(s)) {
-                            LineSegment ls = new LineSegment(p, s);
-                            list.add(ls);
+                        Point p = sortedPoints[i], q = sortedPoints[j], r = sortedPoints[k], s = sortedPoints[l];
+                        if (p.slopeTo(q) == q.slopeTo(r) && q.slopeTo(r) == r.slopeTo(s) && r.slopeTo(s) == s.slopeTo(p)) {
+                            list.add(new LineSegment(p, s));
                         }
                     }
                 }
@@ -39,11 +37,11 @@ public class BruteCollinearPoints {
     }
 
     private void validatePoints(Point[] points) {
-        for (Point p: points)
+        for (Point p : points)
             if (p == null) throw new IllegalArgumentException("Point cannot be null");
-        for (int i = 0; i < points.length-1; i++)
-            if (points[i].compareTo(points[i+1]) == 0) throw new IllegalArgumentException("Duplicate points found");
-        if (points.length < 4) throw new IllegalArgumentException("Insufficient number of points");
+        for (int i = 0; i < points.length; i++)
+            for (int j = i + 1; j < points.length; j++)
+                if (points[i].compareTo(points[j]) == 0) throw new IllegalArgumentException("Duplicate points found");
     }
 
     public int numberOfSegments() {
@@ -51,7 +49,7 @@ public class BruteCollinearPoints {
     }
 
     public LineSegment[] segments() {
-        return this.lineSegments;
+        return this.lineSegments.clone();
     }
 
     public static void main(String[] args) {
