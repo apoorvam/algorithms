@@ -16,6 +16,7 @@ Implementation of various algorithms in Java, with cost analysis.
     - Insertion Sort
     - Shell Sort
     - Merge Sort
+    - Quick Sort
 * Knuth Shuffle
 
 More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/README.md) of algorithms.
@@ -35,6 +36,7 @@ More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/R
     - Using linked lists
     - Using array
 * Intersection of two arrays
+* Pattern Recognition: Collinear points
 
 ### Usage
 
