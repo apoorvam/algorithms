@@ -54,6 +54,7 @@ It does more compares than merge sort, but this is faster because of less data m
 Quick sort is in-place, but not stable sorting algorithm.
 
 ### Time Complexiety
-Best case: N lg N compares
-Worst case: N^2/2 compares (quadratic)
-Average case: ~1.39 N lg N
+
+* Best case: N lg N compares
+* Worst case: N^2/2 compares (quadratic)
+* Average case: ~1.39 N lg N
