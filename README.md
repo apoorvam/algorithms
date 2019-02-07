@@ -17,6 +17,7 @@ Implementation of various algorithms in Java, with cost analysis.
     - Shell Sort
     - Merge Sort
     - Quick Sort
+    - 3-way Partitioning
 * Knuth Shuffle
 
 More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/README.md) of algorithms.

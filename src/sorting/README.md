@@ -58,3 +58,20 @@ Quick sort is in-place, but not stable sorting algorithm.
 * Best case: N lg N compares
 * Worst case: N^2/2 compares (quadratic)
 * Average case: ~1.39 N lg N
+
+## 3-way Partitioning
+
+Quick sort takes quadratic time to sort items with duplicates. 3-way partition can perform better than that. Idea is to partition array into 3 parts such that:
+* Entries between lt and gt are all equal to partition item
+* Entries to left of lt are less than partition item
+* Entries to right of gt are greater than partition item
+
+If a[lo] is partition item v,
+
+* a[i] < v, swap v and a[i], increment i and lt
+* a[i] > v, swap a[i] and a[gt], decrement gt
+* a[i] == v, increment i
+
+### Efficiency
+
+It is entropy optimal. Linear in many cases.
