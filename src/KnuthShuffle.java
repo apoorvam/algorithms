@@ -1,7 +1,5 @@
-import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdIn;
-
-import java.util.Random;
+import edu.princeton.cs.algs4.StdRandom;
 
 /*
 * Knuth Shuffle - in each iteration, pick integer r between 0 and i uniformly at random. Swap elements at position r and i.
@@ -10,7 +8,7 @@ import java.util.Random;
 */
 public class KnuthShuffle {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         int count = Integer.parseInt(StdIn.readLine());
         Object[] arr = new Object[count];
         for (int i = 0; i < count; i++)
@@ -22,14 +20,14 @@ public class KnuthShuffle {
             System.out.println(arr[i]);
     }
 
-	public static void shuffle(Object[] a) {
-		for (int i = 0; i < a.length ; i++ ) {
-			int rand = StdRandom.uniform(i+1);
-			swap(a, i, rand);
-		}
-	}
+    public static void shuffle(Object[] a) {
+        for (int i = 0; i < a.length; i++) {
+            int rand = StdRandom.uniform(i + 1);
+            swap(a, i, rand);
+        }
+    }
 
-	private static void swap(Object[] arr, int i1, int i2) {
+    private static void swap(Object[] arr, int i1, int i2) {
         Object swap = arr[i1];
         arr[i1] = arr[i2];
         arr[i2] = swap;

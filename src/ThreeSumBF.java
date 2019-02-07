@@ -27,9 +27,9 @@ public class ThreeSumBF {
         int count = 0;
         int N = nums.length;
         for (int i = 0; i < N; i++) {
-            for (int j = i+1; j < N; j++) {
-                for (int k = j+1; k < N; k++) {
-                    if (nums[i] + nums[j]+ nums[k] == 0) {
+            for (int j = i + 1; j < N; j++) {
+                for (int k = j + 1; k < N; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
                         count++;
                     }
                 }

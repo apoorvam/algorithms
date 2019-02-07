@@ -82,7 +82,7 @@ public class RandomizedQueueUsingLL<Item> implements Iterable<Item> {
 
     public Item dequeue() {
         assertNotEmpty();
-        size --;
+        size--;
         if (size == 0) {
             Item item = first.item;
             first = null;

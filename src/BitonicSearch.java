@@ -24,11 +24,11 @@ public class BitonicSearch {
     }
 
     private static int bitonicSearch(int[] arr, int numToFind) {
-        int pivot = getPivot(arr, 0, arr.length-1);
-        System.out.printf("0-%d-%d\n", pivot, arr.length-1);
+        int pivot = getPivot(arr, 0, arr.length - 1);
+        System.out.printf("0-%d-%d\n", pivot, arr.length - 1);
         int res1 = ascendingBinarySearch(arr, numToFind, 0, pivot);
-        if (res1 == -1 ){
-            int res2 = descendingBinarySearch(arr,numToFind, pivot+1, arr.length-1);
+        if (res1 == -1) {
+            int res2 = descendingBinarySearch(arr, numToFind, pivot + 1, arr.length - 1);
             if (res2 == -1) {
                 return -1;
             }
@@ -38,30 +38,30 @@ public class BitonicSearch {
     }
 
     private static int descendingBinarySearch(int[] arr, int numToFind, int low, int high) {
-        while(low <= high) {
-            int mid = (low+high)/2;
+        while (low <= high) {
+            int mid = (low + high) / 2;
             if (numToFind == arr[mid]) {
                 return mid;
             }
             if (numToFind < arr[mid]) {
-                low = mid+1;
+                low = mid + 1;
             } else {
-                high = mid-1;
+                high = mid - 1;
             }
         }
         return -1;
     }
 
     public static int ascendingBinarySearch(int[] arr, int givenNum, int low, int high) {
-        while(low <= high) {
-            int mid = (low+high)/2;
+        while (low <= high) {
+            int mid = (low + high) / 2;
             if (givenNum == arr[mid]) {
                 return mid;
             }
             if (givenNum < arr[mid]) {
-                high = mid-1;
+                high = mid - 1;
             } else {
-                low = mid+1;
+                low = mid + 1;
             }
         }
         return -1;
@@ -73,8 +73,8 @@ public class BitonicSearch {
             return mid;
         }
         if (arr[mid] > arr[mid - 1]) {
-            if (arr[mid] > arr[mid+1]) return mid;
-            return getPivot(arr, mid+1, endIndex);
+            if (arr[mid] > arr[mid + 1]) return mid;
+            return getPivot(arr, mid + 1, endIndex);
         } else {
             return getPivot(arr, startIndex, mid);
         }

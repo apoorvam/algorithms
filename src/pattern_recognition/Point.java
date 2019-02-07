@@ -6,9 +6,9 @@ package pattern_recognition;
  *
  ******************************************************************************/
 
-import java.util.Comparator;
-
 import edu.princeton.cs.algs4.StdDraw;
+
+import java.util.Comparator;
 
 public class Point implements Comparable<Point> {
 

@@ -23,7 +23,7 @@ public class QuickUnionUF {
 
     public void printNodes() {
         for (int i = 0; i < nodes.length; i++) {
-            System.out.print(i+ " | ");
+            System.out.print(i + " | ");
         }
         System.out.println();
         for (int n : nodes) {
@@ -32,7 +32,7 @@ public class QuickUnionUF {
     }
 
     private int root(int i) {
-        while(i != nodes[i]) i = nodes[i];
+        while (i != nodes[i]) i = nodes[i];
         return i;
     }
 

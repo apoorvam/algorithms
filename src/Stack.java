@@ -58,7 +58,7 @@ public class Stack<Item> implements Iterable<Item> {
         System.out.println("Enter - to pop from stack and type word in new line to push it to stack.");
         Scanner s = new Scanner(System.in);
         Stack stack = new Stack();
-        while(s.hasNextLine()) {
+        while (s.hasNextLine()) {
             String line = s.nextLine();
             if (line.equals("-")) {
                 System.out.println(stack.pop());

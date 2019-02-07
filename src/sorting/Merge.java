@@ -32,29 +32,29 @@ public class Merge {
 
     public static void sort(int[] arr) {
         int[] aux = new int[arr.length];
-        sort(arr, aux, 0, arr.length-1);
+        sort(arr, aux, 0, arr.length - 1);
     }
 
     private static void sort(int[] arr, int[] aux, int start, int end) {
         if (end == start) return;
 //      if (end == start + INSERTION_CUTOFF - 1) Insertion.sort(arr); // Opt 1
-        int mid = (start + end)/2;
+        int mid = (start + end) / 2;
 
         sort(arr, aux, start, mid);
-        sort(arr, aux, mid+1, end);
-        if (arr[mid] <= arr[mid+1]) return; // Opt 2
+        sort(arr, aux, mid + 1, end);
+        if (arr[mid] <= arr[mid + 1]) return; // Opt 2
         merge(arr, aux, start, mid, end);
     }
 
     private static void merge(int[] arr, int[] aux, int start, int mid, int end) {
         int i = start;
-        int j = mid+1;
+        int j = mid + 1;
         int k = start;
 
         for (int a = start; a <= end; a++)
             aux[a] = arr[a];
 
-        while(i <= mid && j <= end) {
+        while (i <= mid && j <= end) {
             if (aux[i] <= aux[j]) {
                 arr[k] = aux[i];
                 i++;
@@ -65,7 +65,7 @@ public class Merge {
             k++;
         }
         // copy rest of left array
-        while ( i <= mid) {
+        while (i <= mid) {
             arr[k] = aux[i];
             i++;
             k++;

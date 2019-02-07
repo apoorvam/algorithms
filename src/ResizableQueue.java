@@ -8,7 +8,7 @@ public class ResizableQueue {
     }
 
     public void enqueue(String item) {
-        if (tail == q.length-1) {
+        if (tail == q.length - 1) {
             resize(q.length * 2);
         }
         q[++tail] = item;
@@ -29,7 +29,7 @@ public class ResizableQueue {
         String item = q[head];
         q[head] = null;
         if (!isEmpty()) head++;
-        if (tail - head == q.length/4) resize(q.length/2);
+        if (tail - head == q.length / 4) resize(q.length / 2);
         return item;
     }
 

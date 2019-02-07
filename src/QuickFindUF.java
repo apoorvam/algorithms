@@ -15,14 +15,14 @@ public class QuickFindUF {
 
     public QuickFindUF(int size) {
         nodes = new int[size];
-        for (int i = 0; i< size; i++) {
+        for (int i = 0; i < size; i++) {
             nodes[i] = i;
         }
     }
 
     public void printNodes() {
         for (int i = 0; i < nodes.length; i++) {
-            System.out.print(i+ " | ");
+            System.out.print(i + " | ");
         }
         System.out.println();
         for (int n : nodes) {
@@ -33,7 +33,7 @@ public class QuickFindUF {
     public void union(int p, int q) {
         int valP = nodes[p];
         int valQ = nodes[q];
-        for (int i = 0; i< nodes.length ; i++) {
+        for (int i = 0; i < nodes.length; i++) {
             if (nodes[i] == valP) {
                 nodes[i] = valQ;
             }

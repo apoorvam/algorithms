@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 /*
 * A randomized queue is similar to a stack or queue, except that the item removed is chosen uniformly at random from items in the data structure.
 * */
-public class RandomizedQueue<Item> implements Iterable<Item>{
+public class RandomizedQueue<Item> implements Iterable<Item> {
     private Item[] items;
     private int size = 0;
 
@@ -17,7 +17,7 @@ public class RandomizedQueue<Item> implements Iterable<Item>{
     public void enqueue(Item item) {
         if (item == null) throw new IllegalArgumentException("Argument invalid");
 
-        if (size == items.length-1) {
+        if (size == items.length - 1) {
             resize(items.length * 2);
         }
         items[size++] = item;
@@ -36,10 +36,10 @@ public class RandomizedQueue<Item> implements Iterable<Item>{
         assertNotEmpty();
         int rand = StdRandom.uniform(0, size);
         Item item = items[rand];
-        items[rand] = items[size-1];
-        items[size-1] = null;
+        items[rand] = items[size - 1];
+        items[size - 1] = null;
         size--;
-        if (size == items.length/4) resize(items.length/2);
+        if (size == items.length / 4) resize(items.length / 2);
         return item;
     }
 

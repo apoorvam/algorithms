@@ -37,6 +37,7 @@ More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/R
     - Using array
 * Intersection of two arrays
 * Pattern Recognition: Collinear points
+* Finding kth top element
 
 ### Usage
 

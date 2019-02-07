@@ -13,7 +13,7 @@ import edu.princeton.cs.algs4.StdIn;
 * Better suited for partially sorted input.
 */
 public class Insertion {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         int count = Integer.parseInt(StdIn.readLine());
         Comparable[] arr = new Comparable[count];
         for (int i = 0; i < count; i++)
@@ -26,15 +26,15 @@ public class Insertion {
     }
 
     public static void sort(Comparable[] arr) {
-    	int N = arr.length;
-    	for(int i = 0; i <  N; i++) {
-    		for (int j = i; j > 0; j--) {
-    			if (less(arr[j], arr[j-1]))
-    				swap(arr, j, j-1);
-    			else
-    				break;
-    		}
-    	}
+        int N = arr.length;
+        for (int i = 0; i < N; i++) {
+            for (int j = i; j > 0; j--) {
+                if (less(arr[j], arr[j - 1]))
+                    swap(arr, j, j - 1);
+                else
+                    break;
+            }
+        }
     }
 
     private static void swap(Comparable[] arr, int i1, int i2) {

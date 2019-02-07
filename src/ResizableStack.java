@@ -14,21 +14,21 @@ public class ResizableStack {
 
     public void push(String item) {
         if (N == arr.length) {
-            resize(2*arr.length);
+            resize(2 * arr.length);
         }
         arr[N++] = item;
     }
 
     private void resize(int capacity) {
         String[] newArr = new String[capacity];
-        for (int i =0; i<arr.length; i++) newArr[i] = arr[i];
+        for (int i = 0; i < arr.length; i++) newArr[i] = arr[i];
         arr = newArr;
     }
 
     public String pop() {
         String item = arr[--N];
         arr[N] = null;
-        if (N == arr.length/4) resize(arr.length/2);
+        if (N == arr.length / 4) resize(arr.length / 2);
         return item;
     }
 

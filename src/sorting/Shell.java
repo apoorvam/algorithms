@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdIn;
 * Worst case: N^(3/2). But very fast for smaller input size and less code footprint.
 */
 public class Shell {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         int count = Integer.parseInt(StdIn.readLine());
         Comparable[] arr = new Comparable[count];
         for (int i = 0; i < count; i++)
@@ -24,22 +24,22 @@ public class Shell {
     }
 
     public static void sort(Comparable[] arr) {
-    	int h = 1;
-    	int N = arr.length;
-    	while(h <= N) h = 3*h + 1; // 3x+1 increment sequence
+        int h = 1;
+        int N = arr.length;
+        while (h <= N) h = 3 * h + 1; // 3x+1 increment sequence
 
-    	while (h > 0) {
-    		// h-sort the array
-    		for (int i = h; i < N; i ++) {
-    			for (int j = i; j >= h && less(arr[j], arr[j-h]); j -= h) {
-    				swap(arr, j, j-h);
-    			}
-    		}
+        while (h > 0) {
+            // h-sort the array
+            for (int i = h; i < N; i++) {
+                for (int j = i; j >= h && less(arr[j], arr[j - h]); j -= h) {
+                    swap(arr, j, j - h);
+                }
+            }
 
-    		//get next value of increment
-    		h = h/3;
-    	}
-    	
+            //get next value of increment
+            h = h / 3;
+        }
+
     }
 
     private static void swap(Comparable[] arr, int i1, int i2) {

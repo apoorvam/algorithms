@@ -18,8 +18,8 @@ public class ArrayIntersection {
         Shell.sort(a);
         Shell.sort(b);
 
-        int i = 0, j = 0, numCommmon = 0 ;
-        while(i < a.length && j < b.length) {
+        int i = 0, j = 0, numCommmon = 0;
+        while (i < a.length && j < b.length) {
             if (a[i].x > b[j].x) j++;
             else if (a[i].x < b[j].x) i++;
             else if (a[i].y < b[j].y) i++;
@@ -31,11 +31,11 @@ public class ArrayIntersection {
                 numCommmon++;
             }
         }
-        System.out.println("Total number of intersection points: "+numCommmon);
+        System.out.println("Total number of intersection points: " + numCommmon);
     }
 
 
-    public static class Point implements Comparable<Point>{
+    public static class Point implements Comparable<Point> {
         int x, y;
 
         public Point(int x, int y) {

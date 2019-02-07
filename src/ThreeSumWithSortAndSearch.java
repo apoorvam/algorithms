@@ -32,7 +32,7 @@ public class ThreeSumWithSortAndSearch {
         int count = 0;
 
         for (int i = 0; i < N; i++) {
-            for (int j = i+1; j < N; j++) {
+            for (int j = i + 1; j < N; j++) {
                 int toFind = -(nums[i] + nums[j]);
                 int searchRes = BinarySearch.binarySearch(nums, toFind);
                 if (searchRes != -1) count++;

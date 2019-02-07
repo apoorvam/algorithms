@@ -27,7 +27,7 @@ public class Selection {
         int N = arr.length;
         for (int i = 0; i < N; i++) {
             int minIndex = i;
-            for (int j = i+1; j < N; j++) {
+            for (int j = i + 1; j < N; j++) {
                 if (less(arr[j], arr[minIndex])) {
                     minIndex = j;
                 }

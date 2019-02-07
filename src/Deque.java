@@ -77,8 +77,7 @@ public class Deque<Item> implements Iterable<Item> {
         if (last.previous != null) {
             last.previous.next = null;
             last = last.previous;
-        }
-        else {
+        } else {
             last = null;
             first = null;
         }
@@ -89,10 +88,12 @@ public class Deque<Item> implements Iterable<Item> {
     public Iterator<Item> iterator() {
         return new Iterator<Item>() {
             private Node current = first;
+
             @Override
             public boolean hasNext() {
                 return current != null;
             }
+
             @Override
             public Item next() {
                 if (current == null) throw new NoSuchElementException("No element found");
@@ -100,6 +101,7 @@ public class Deque<Item> implements Iterable<Item> {
                 current = current.next;
                 return item;
             }
+
             @Override
             public void remove() {
                 throw new UnsupportedOperationException("Operation not supported");

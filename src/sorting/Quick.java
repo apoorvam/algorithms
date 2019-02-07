@@ -34,22 +34,22 @@ public class Quick {
 
     public static void sort(int[] arr) {
         StdRandom.shuffle(arr);
-        sort(arr, 0, arr.length-1);
+        sort(arr, 0, arr.length - 1);
     }
 
     private static void sort(int[] arr, int start, int end) {
         if (end <= start) return;
 
         int partitionIndex = partition(arr, start, end);
-        sort(arr, start, partitionIndex-1);
-        sort(arr, partitionIndex+1, end);
+        sort(arr, start, partitionIndex - 1);
+        sort(arr, partitionIndex + 1, end);
     }
 
     private static int partition(int[] arr, int low, int high) {
-        int i = low, j = high+1;
-        while(true) {
-            while(less(arr[++i], arr[low])) if (i == high) break;
-            while(less(arr[low], arr[--j])) if (j == low) break;
+        int i = low, j = high + 1;
+        while (true) {
+            while (less(arr[++i], arr[low])) if (i == high) break;
+            while (less(arr[low], arr[--j])) if (j == low) break;
             if (i >= j) break;
 
             swap(arr, i, j);

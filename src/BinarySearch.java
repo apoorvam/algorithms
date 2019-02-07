@@ -14,16 +14,16 @@ public class BinarySearch {
 
     public static int binarySearch(int[] arr, int givenNum) {
         int low = 0;
-        int high = arr.length -1;
-        while(low <= high) {
-            int mid = (low+high)/2;
+        int high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
             if (givenNum == arr[mid]) {
                 return mid;
             }
             if (givenNum < arr[mid]) {
-                high = mid-1;
+                high = mid - 1;
             } else {
-                low = mid+1;
+                low = mid + 1;
             }
         }
         return -1;
@@ -31,7 +31,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNext()) {
+        while (scanner.hasNext()) {
             int numToFind = scanner.nextInt();
             int[] arr = {1, 2, 4, 6, 8, 10, 12, 15, 18, 19, 20, 25};
 
