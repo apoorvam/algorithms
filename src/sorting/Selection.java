@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdIn;
 /*
 * Selection sort - sorts by finding a min to the right of current position and swap with current element.
 *
-* Time complexiety:
+* Time Complexity:
 * N^2 /2 compares and N swaps.
 * Quadratic time irrespective of input.
 * */

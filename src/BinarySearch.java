@@ -4,7 +4,7 @@ import java.util.Scanner;
 Searches a sorted array of integers to find the given number.
 If present returns the position of number, else returns -1.
 
-Complexiety:
+Complexity:
 ln n
 
 Best case: 1

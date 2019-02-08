@@ -6,7 +6,7 @@ ThreeSumWithSortAndSearch is a approach to solve three sum problem, with a solut
 It uses sort, say quick sort to sort the numbers first. For every combination of two numbers in array, -(two numbers)
 which has to be third number is found using binary search.
 
-Complexiety:
+Complexity:
 
 Sort: n ln n OR n^2
 Binary Search: ln n

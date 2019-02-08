@@ -4,7 +4,7 @@
 
 - sorts by finding a min to the right of current position and swap with current element.
 
-### Time complexiety
+### Time Complexity
 
 * N^2 /2 compares and N swaps.
 * Quadratic time irrespective of input.
@@ -12,7 +12,7 @@
 ## Insertion Sort 
 - starting from current element every consecutive element to it's left is compared. If any is less than previous one, they are swapped. If not, move the current element pointer to right and continue.
 
-### Time Complexiety
+### Time Complexity
 * Worst case: ~N^2/2 compares and swaps if array is sorted in reverse order. Otherwise, its less than quadratic time.
 * Best case: Already sorted takes N-1 compares and 0 swaps. 
 
@@ -25,14 +25,14 @@ Better in best and random cases when compared to Selection sort, but not in wors
 
 ![Shell Sort example](https://github.com/apoorvam/algorithms/blob/master/assets/shell_sort_example.png?raw=true)
 
-### Time Complexiety
-* Worst case: N^(3/2). But very fast for smaller input size and less code footprint. Average case complexiety cannot be easily defined(linearithmetic).
+### Time Complexity
+* Worst case: N^(3/2). But very fast for smaller input size and less code footprint. Average case complexity cannot be easily defined(linearithmetic).
 
 ## Merge Sort
 * Uses divide and conquer method to sort.
 * Divide array into two halves, recursively sort them, merge two halves.
 
-### Time Complexiety
+### Time Complexity
 * Time: Uses utmost N log N compares and 6N log N array access to sort any array.
 * Space: Uses extra space proportional to N, for auxillary array.
 
@@ -53,7 +53,7 @@ all entries to the right of k are greater than arr[k]
 It does more compares than merge sort, but this is faster because of less data movement.
 Quick sort is in-place, but not stable sorting algorithm.
 
-### Time Complexiety
+### Time Complexity
 
 * Best case: N lg N compares
 * Worst case: N^2/2 compares (quadratic)
@@ -75,3 +75,4 @@ If a[lo] is partition item v,
 ### Efficiency
 
 It is entropy optimal. Linear in many cases.
+    

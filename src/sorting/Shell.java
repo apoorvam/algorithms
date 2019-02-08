@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdIn;
 * Element at position i is compared with element at i+h, where is 7 in case of 7-sort and swapped if out of order. 
 * 1-sort is like a insertion sort. Instead of comparing with element left of it, we compare with elements at distance in multiples of h left of element i.
 * 
-* Time Complexiety:
+* Time Complexity:
 * Worst case: N^(3/2). But very fast for smaller input size and less code footprint.
 */
 public class Shell {

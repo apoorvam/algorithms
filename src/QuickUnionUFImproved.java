@@ -6,7 +6,7 @@ An integer array of length N, where interpretation is that array[i] is the paren
 The improvement here is that, size of each tree is maintained in an array. While doing union, smaller tree is merged with
 larger one, thus avoiding the problem of tall trees.
 
-Complexiety:
+Complexity:
  union and connected/find takes time proportional to depth of p and q in tree.
  Depth of any node is at most ln N.
 

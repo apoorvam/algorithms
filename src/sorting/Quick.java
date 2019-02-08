@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdRandom;
 *   all entries to the right of k are greater than arr[k]
 * - Sort each piece recursively
 *
-* Time Complexiety:
+* Time Complexity:
 * Best case: N lg N compares
 * Worst case: N^2/2 compares (quadratic)
 * Average case: ~1.39 N lg N

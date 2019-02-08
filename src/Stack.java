@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /* Implementation of Data Structure Stack of strings using linked lists.
 
-Time complexiety: Every operation takes constant time
+Time Complexity: Every operation takes constant time
 Space: ~40 bytes per stack node(excluding string itself): 16B object overhead, 8B each for inner object, item and next
 */
 public class Stack<Item> implements Iterable<Item> {

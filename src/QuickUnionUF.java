@@ -3,7 +3,7 @@ Quick Union is an algorithm to solve dynamic connectivity problem.
 An integer array of length N, where interpretation is that array[i] is the parent of i. Or root of i is arr[arr[..arr[i]]]
 It stores the tree structure in array, by storing parent of each.
 
-Complexiety:
+Complexity:
  Initialize: N
  Union: N (cost in finding roots)
  Find: N

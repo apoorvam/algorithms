@@ -4,7 +4,7 @@ package sorting;
  Given two arrays a[] and b[], each containing n distinct 2D points in the plane, design a subquadratic algorithm
  to count the number of points that are contained both in array a[] and array b[].
 
- Complexiety: Shell sort O(N^3/2) + n
+ Complexity: Shell sort O(N^3/2) + n
 */
 public class ArrayIntersection {
     public static void main(String[] args) {

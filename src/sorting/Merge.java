@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdIn;
 * Merge sort - divide array into two halves, recursively sort them, merge two halves.
 * Uses divide and conquer method to sort.
 *
-* Time Complexiety: Uses utmost N log N compares and 6N log N array access to sort any array.
+* Time Complexity: Uses utmost N log N compares and 6N log N array accesses to sort any array.
 * Space: Uses extra space proportional to N, for auxillary array.
 *
 * Optimization 1: Use insertion sort for array sizes ~ 7

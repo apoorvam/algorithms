@@ -2,7 +2,7 @@
 Quick Find is an algorithm to solve dynamic connectivity problem.
 An integer array of length N, where p and q are interpreted as connected if value of array[p] and array[q] are equal
 
-Complexiety:
+Complexity:
  Initialize: N
  Union: N
  Find: 1

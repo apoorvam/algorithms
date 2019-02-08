@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdRandom;
 * Selection: Given an array of N items, find k-th smallest item. Min k = 1, Max k = N
 * Based on quick select, a modification of quick sort.
 *
-* Time Complexiety: Linear time in average case. But quadratic in worst case.
+* Time Complexity: Linear time in average case. But quadratic in worst case.
 * */
 public class QuickSelect {
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 This is a brute force algorithm to find the three sum that's zero. Uses a triple loop with all combinations of numbers
 to find the set which sums to zero.
 
-Complexiety: Cubic
+Complexity: Cubic
 Detail: NC3 loops => 3 array access per loop
         ~ 1/2 N^3 array accesses
 

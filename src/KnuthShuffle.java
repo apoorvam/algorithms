@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdRandom;
 /*
 * Knuth Shuffle - in each iteration, pick integer r between 0 and i uniformly at random. Swap elements at position r and i.
 * 
-* Time Complexiety: Linear
+* Time Complexity: Linear
 */
 public class KnuthShuffle {
 
