@@ -1,3 +1,5 @@
+import edu.princeton.cs.algs4.StdRandom;
+
 import java.util.NoSuchElementException;
 
 /*
@@ -40,6 +42,12 @@ public class MaxPriorityQueue {
         arr[N--] = null;
         if (!isEmpty()) sink(1);
         return max;
+    }
+
+    public String sample() {
+        if (isEmpty()) throw new NoSuchElementException("No such element");
+        int index = StdRandom.uniform(1, N + 1);
+        return arr[index];
     }
 
     private void swim(int n) {

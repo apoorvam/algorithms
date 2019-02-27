@@ -1,9 +1,10 @@
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class MaxPriorityQueueTest {
 
@@ -42,6 +43,20 @@ public class MaxPriorityQueueTest {
 
         assertEquals("A", q.deleteMax());
         q.deleteMax();
+    }
+
+    @Test
+    public void testGetSample() {
+        MaxPriorityQueue q = new MaxPriorityQueue();
+
+        q.insert("C");
+        q.insert("D");
+        q.insert("A");
+        q.insert("E");
+
+        List expected = Arrays.asList("A", "C", "D", "E");
+
+        for (int i = 0; i < 10; i++) assertTrue(expected.contains(q.sample()));
     }
 
 }
