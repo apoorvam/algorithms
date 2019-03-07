@@ -6,45 +6,59 @@ import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Solver {
-    private class Move implements Comparable<Move>{
+    private Move lastMove;
+
+    private class Move implements Comparable<Move> {
+        private final Board board;
+        private final int myManhattanDistance;
         private Move previous;
-        private Board board;
         private int moves;
+
         public Move(Board board) {
             this.board = board;
+            this.myManhattanDistance = this.board.manhattan();
         }
 
         public Move(Move previous, Board board) {
             this.previous = previous;
             this.board = board;
-            this.moves = previous.moves +1;
+            this.myManhattanDistance = this.board.manhattan();
+            this.moves = previous.moves + 1;
         }
 
         @Override
-        public int compareTo(Move o) {
-            return (this.board.manhattan() - o.board.manhattan()) + (this.moves - o.moves);
+        public int compareTo(Move other) {
+            return (this.myManhattanDistance - other.myManhattanDistance) + (this.moves - other.moves);
         }
     }
 
-    private Move lastMove;
 
     public Solver(Board initial) {
+        if (initial == null) throw new IllegalArgumentException("Board cannot be null");
+
         MinPQ<Move> moves = new MinPQ<Move>();
         moves.insert(new Move(initial));
 
         MinPQ<Move> twinMoves = new MinPQ<Move>();
         twinMoves.insert(new Move(initial.twin()));
-        
-        while(true) {
+
+        while (true) {
             lastMove = moveFurther(moves);
-            if (lastMove != null || moveFurther(twinMoves) != null) return;
+            if (lastMove != null) {
+                return;
+            }
+            Move a = moveFurther(twinMoves);
+            if (a != null) {
+                return;
+            }
         }
     }
 
     private Move moveFurther(MinPQ<Move> moves) {
-        if(moves.isEmpty()) return null;
+        if (moves.isEmpty()) return null;
         Move bestMove = moves.delMin();
         if (bestMove.board.isGoal()) return bestMove;
+
         for (Board neighbor : bestMove.board.neighbors()) {
             if (bestMove.previous == null || !neighbor.equals(bestMove.previous.board)) {
                 moves.insert(new Move(bestMove, neighbor));
@@ -57,17 +71,17 @@ public class Solver {
         return lastMove != null;
     }
 
-    private int moves() {
+    public int moves() {
         if (!isSolvable()) return -1;
         return lastMove.moves;
     }
 
-    private Iterable<Board> solution() {
-        Stack<Board> stack = new Stack<>();
-        if (!isSolvable()) return stack;
+    public Iterable<Board> solution() {
+        if (!isSolvable()) return null;
 
+        Stack<Board> stack = new Stack<>();
         Move current = lastMove;
-        while(current.previous != null) {
+        while (current != null) {
             stack.push(current.board);
             current = current.previous;
         }

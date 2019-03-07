@@ -62,4 +62,16 @@ public class BoardTest {
 
         assertFalse(b.isGoal());
     }
+
+    @Test
+    public void testAutoboxingAndEquals() {
+        double a = 0.0;
+        double b = -0.0;
+        Double x = new Double(0.0);
+        Double y = new Double(-0.0);
+
+        assertTrue(a == b);
+        assertFalse(x.equals(y));
+
+    }
 }
