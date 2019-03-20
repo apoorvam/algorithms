@@ -39,6 +39,7 @@ More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/R
 * Intersection of two arrays
 * Pattern Recognition: Collinear points
 * Finding kth top element
+* Binary Search Tree(BST)
 
 ### Usage
 
