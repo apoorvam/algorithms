@@ -40,6 +40,7 @@ More on [analysis](https://github.com/apoorvam/algorithms/blob/master/analysis/R
 * Pattern Recognition: Collinear points
 * Finding kth top element
 * Binary Search Tree(BST)
+* 1D Range Count
 
 ### Usage
 
