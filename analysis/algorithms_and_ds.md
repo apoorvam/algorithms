@@ -48,7 +48,7 @@ Possible Graph representations:
 
 In Adjacency list, each vertex will have a entry in array. Each of this entry points to a list which has all vertices to which given vertex is connected to.
 
-[!Graph representations time complexiety](/assets/graph_representation_tc.png)
+![Graph representations time complexiety](/assets/graph_representation_tc.png)
 
 
 
