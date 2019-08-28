@@ -44,12 +44,11 @@ Possible Graph representations:
 
 * Set of Edges: Maintain a list of edges(linked list or array)
 * Adjacency Matrix: Maintain a 2D V*V boolean array. Duplicate entries and space in-efficient
-* Adjacency List: Maintain vertex-indexed array of lists
+* [Adjacency List](/src/graphs/Graph.java): Maintain vertex-indexed array of lists
 
 In Adjacency list, each vertex will have a entry in array. Each of this entry points to a list which has all vertices to which given vertex is connected to.
 
 ![Graph representations time complexiety](/assets/graph_representation_tc.png)
-
 
 
 
