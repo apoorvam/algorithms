@@ -31,6 +31,7 @@ public class QuickUnionUF {
         }
     }
 
+    // keep going until it does not change, which happens only when node has no parent
     private int root(int i) {
         while (i != nodes[i]) i = nodes[i];
         return i;

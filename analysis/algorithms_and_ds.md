@@ -6,7 +6,7 @@
 * Data types: [Stack](/src/Stack.java), [Queue](/src/Queue.java), Bag, [Union-Find](/src/QuickUnionUF.java), [Priority queue](/src/MaxPriorityQueue.java)
 * Sorting: [Quicksort](/src/sorting/Quick.java), [Mergesort](/src/sorting/Merge.java), [Selection sort](/src/sorting/Selection.java), [Insertion sort](/src/sorting/Insertion.java)
 * Searching: [BST](/src/BST.java), red-black BST, [Hash Table](/analysis/hashing.md)
-* Graphs: BFS, DFS, Prim, Kruskal, Dijikstra
+* Graphs: [BFS](/src/graphs/BreadthFirstPaths.java), [DFS](/src/graphs/DepthFirstPaths.java), Prim, Kruskal, Dijikstra
 * Strings: KMP, Regexps, TST, Huffman, LZW
 * Advanced: B-Tree, Suffix array, maxflow
 
@@ -88,4 +88,15 @@ Repeat until queue is empty:
 **BFS:** Puts unvisited vertices on queue
 
 [BFS](/src/graphs/BreadthFirstPaths.java) gives shortest path between vertices.
+
+## Connected Components
+
+Quick Union and Quick Find are also algorithms to solve connectivity problems.
+But they are of quadratic time complexity. With improvements like Path compression, weighted quick union it becomes logarithmic => depends on depth of node. 
+But not quite enough and would need better solutions. 
+
+* [Computing Connected Components](/src/graphs/ConnectedComponent.java) is another graph processing application. 
+* This is based on relation "is connected to" being a equivalence relation. Reflexive. Symmetric. Transitive.
+* A connected component is a maximal set of connected vertices. 
+* Uses DFS to build a data structure from which `isConnected` operation becomes constant time.
 
