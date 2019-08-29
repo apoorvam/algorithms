@@ -69,3 +69,23 @@ Mark v as visited
 Recursively visit all unmarked vertices w adjacent to v
 ```
 
+## Breadth First Search
+
+Repeat until Queue is empty:
+* Remove vertex v from queue
+* Mark v as visited and add all unmarked adjacent vertices of v to queue
+
+```
+BFS(source vertex s)
+Put s onto a FIFO queue and mark it as visited
+Repeat until queue is empty:
+    - remove the least recently added vertex v
+    - add each of v's adjacent unvisited vertices to queue
+      and mark them as visited
+```
+
+**DFS:** Puts unvisited vertices on stack
+**BFS:** Puts unvisited vertices on queue
+
+[BFS](/src/graphs/BreadthFirstPaths.java) gives shortest path between vertices.
+

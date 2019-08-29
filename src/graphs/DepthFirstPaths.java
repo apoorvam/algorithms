@@ -2,13 +2,14 @@ package graphs;
 
 import edu.princeton.cs.algs4.Stack;
 
-public class Paths {
+// DepthFirstPaths uses Graph data structure and implements DFS traverse through it
+public class DepthFirstPaths implements GraphPaths {
     private final int source;
     private final Graph graph;
     private boolean[] marked;
     private int[] edgeTo;
 
-    public Paths(Graph graph, int source) {
+    public DepthFirstPaths(Graph graph, int source) {
         this.graph = graph;
         this.source = source;
         marked = new boolean[graph.V()];
