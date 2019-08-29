@@ -50,5 +50,22 @@ In Adjacency list, each vertex will have a entry in array. Each of this entry po
 
 ![Graph representations time complexiety](/assets/graph_representation_tc.png)
 
+Sparse and Dense Graphs: Degree of each vertex in graph is less/high.
 
+## Depth First Search
+
+* Maze exploration
+* Mark each visited intersection(vertex) and passage(edge)
+* Retrace steps when no unvisited options. Key this is that no path is visited twice.
+
+[DFS](/src/graphs/Paths.java)
+Goal: Systematically search all vertices of a graph
+Idea: Mimic maze exploration
+
+```
+DFS(to visit a vertex v)
+
+Mark v as visited
+Recursively visit all unmarked vertices w adjacent to v
+```
 

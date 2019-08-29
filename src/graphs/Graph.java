@@ -26,4 +26,8 @@ public class Graph {
     public Iterable<Integer> adj(int v) {
         return adj[v];
     }
+
+    public int V() {
+        return this.V;
+    }
 }
