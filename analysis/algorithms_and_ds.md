@@ -20,14 +20,15 @@ Graph API:
 public class Graph
 	Graph(int V)
 	Graph(In in)
-void addEdge(int v, int w)
-Iterable<Integer> adj(int v)
-int V()
-int E()
-String toString()
+    void addEdge(int v, int w)
+    Iterable<Integer> adj(int v)
+    int V()
+    int E()
+    String toString()
 ```
 
 **Path:** Sequence of vertices connected by edges.
+
 **Cycle:** Path whose first and last vertices are same.
 
 Common graph problems:
@@ -59,6 +60,7 @@ Sparse and Dense Graphs: Degree of each vertex in graph is less/high.
 * Retrace steps when no unvisited options. Key this is that no path is visited twice.
 
 [DFS](/src/graphs/Paths.java)
+
 Goal: Systematically search all vertices of a graph
 Idea: Mimic maze exploration
 
@@ -85,6 +87,7 @@ Repeat until queue is empty:
 ```
 
 **DFS:** Puts unvisited vertices on stack
+
 **BFS:** Puts unvisited vertices on queue
 
 [BFS](/src/graphs/BreadthFirstPaths.java) gives shortest path between vertices.
@@ -100,7 +103,7 @@ But not quite enough and would need better solutions.
 * A connected component is a maximal set of connected vertices. 
 * Uses DFS to build a data structure from which `isConnected` operation becomes constant time.
 
-DFS based problems:
+#### DFS based problems
 
 * Is the [graph bipartite](/src/graphs/BipartiteGraph.java)?
 * Is there a [cycle in graph](/src/graphs/CyclicGraph.java)? Find cycle.
