@@ -27,6 +27,10 @@ public class Graph {
         return adj[v];
     }
 
+    public int degree(int v) {
+        return adj[v].size();
+    }
+
     public int V() {
         return this.V;
     }

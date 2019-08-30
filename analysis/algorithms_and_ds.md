@@ -100,3 +100,11 @@ But not quite enough and would need better solutions.
 * A connected component is a maximal set of connected vertices. 
 * Uses DFS to build a data structure from which `isConnected` operation becomes constant time.
 
+DFS based problems:
+
+* Is the [graph bipartite](/src/graphs/BipartiteGraph.java)?
+* Is there a [cycle in graph](/src/graphs/CyclicGraph.java)? Find cycle.
+* The Seven bridges of Konigsberg: Is there a cycle that uses each edge exactly once? - [Euler cycle](/src/graphs/EulerCycleGraph.java)
+    - A connected graph is Eulerian iff all vertices have even degree.
+* Find a cycle that visits every vertex exactly once: Hamilton cycle - NP Complete problem
+
